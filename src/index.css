@@ -1,0 +1,295 @@
+:root {
+    position: relative;
+    font-size: 16px;
+    --dark-blue: #3B28CC;
+    --semi-dark-blue: #2667FF;
+    --neutral-blue: #3F8EFC;
+    --semi-light-blue: #87BFFF;
+    --light-blue: #e6f5ff;
+    --bright-text: aliceblue;
+
+}
+
+button {
+    border: none;
+    padding: 0;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    min-height: 100vh;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.main {
+    background-color: var(--light-blue);
+    padding-left: 5%;
+    position: relative;
+    grid-column: 2/-1;
+}
+
+nav {
+    grid-column: 1/2;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    padding: 0 20px;
+    border-right: 1px solid gray;
+    background-color: var(--semi-light-blue);
+    position: relative;
+}
+
+
+.date-sorted {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.date-sorted button {
+    height: 40px;
+    background-color: var(--semi-dark-blue);
+    font-size: 1rem;
+    color: var(--bright-text);
+    transition: all 0.20s;
+    border-radius: 5px;
+    border: 2px solid var(--light-blue);
+}
+
+
+.project-card:hover button {
+    background-color: var(--semi-dark-blue);
+}
+
+.date-sorted button:hover {
+    background-color: var(--dark-blue);
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.project-card {
+    display: flex;
+    flex-basis: 40px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px;
+    border: 2px solid var(--light-blue);
+
+}
+
+
+.add-project.visible {
+    display: block;
+    border-radius: 5px;
+    background-color: var(--light-blue);
+    box-shadow: 3px 3px 10px;
+    transition: 0.20s;
+}
+
+.add-project:hover {
+    box-shadow: 6px 6px 10px;
+}
+
+.add-project {
+    display: none;
+}
+
+.add-project-form {
+    display: none;
+}
+
+.add-project-form.visible {
+    display: flex;
+}
+
+
+.project-card button {
+    background-color: var(--dark-blue);
+    color: var(--bright-text);
+    font-size: 1rem;
+}
+
+.project-btn {
+    flex: 7;
+    transition: all 0.20s;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.delete-project {
+    flex: 1;
+    transition: all 0.20s;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.add-project-form input,
+.add-project button {
+    flex: 1;
+}
+
+.add-project-form input {
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid var(--dark-blue);
+    font-size: 1rem;
+    outline: none;
+}
+
+.add-project-form svg path {
+    transition: 0.15s;
+}
+
+.add-project-form .add:hover>svg path {
+    fill: greenyellow;
+}
+
+
+.add-project-form .cancel:hover>svg path {
+    stroke: red;
+}
+
+.add-project-form button {
+    background-color: transparent;
+}
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10vh;
+}
+
+.add-task-btn {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    background-color: var(--semi-dark-blue);
+    color: var(--bright-text);
+    font-size: 1rem;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 3px 3px 10px black;
+    transition: all ease 0.3s;
+}
+
+.add-task-btn:hover {
+    background-color: var(--dark-blue);
+    box-shadow: inset 3px 3px 10px black;
+}
+
+.popup-form {
+    max-width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+}
+
+.popup-form.visible {
+    visibility: visible;
+}
+
+.popup-form fieldset {
+    padding: 30px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+}
+
+.popup-form form {}
+
+.popup-form input,
+.popup-form textarea,
+.popup-form select {
+    padding: 5px 10px;
+    width: 100%;
+}
+
+li {
+    list-style-type: none;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    align-items: stretch;
+}
+
+li label {
+    position: absolute;
+    top: -7px;
+}
+
+.tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.task-card {
+    display: flex;
+    gap: 50px;
+    padding-right: 5%;
+    margin-right: 10%;
+    box-shadow: 3px 3px 10px var(--dark-blue);
+    border-radius: 10px;
+}
+
+.task-name {
+    flex: 1;
+}
+
+.delete-task {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+.task-card.done {
+    background-color: #d7d7d7;
+    text-decoration: line-through;
+}
+
+.show-menu {
+    position: absolute;
+    background-color: transparent;
+    left: calc(-5% - 5px);
+    top: 0;
+    z-index: 100;
+}
+
+@media screen and (max-width: 900px) {
+    .content {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 4fr;
+        min-height: 100vh;
+    }
+
+    nav {
+        grid-column: 1/2;
+        padding-bottom: 10vh;
+    }
+
+    .main {
+        grid-column: 1/2;
+        box-shadow: inset 0px 20px 20px black;
+    }
+
+    .task-card {
+        gap: 20px;
+    }
+}

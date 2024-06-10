@@ -1,0 +1,25 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "This is a nice and handy todo list",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "keywords": [
+    "ToDo"
+  ],
+  "author": "Jakob PLoner",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.0",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "date-fns": "^3.6.0"
+  }
+}

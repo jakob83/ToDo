@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+</head>
+
+<body>
+
+    <div class="content">
+        <nav>
+            <h2>Tsagga Task</h2>
+            <div class="date-sorted">
+                <button class="today" id="todayTasksBtn">today</button>
+                <button class="this-week" id="weekTaskBtn">this week</button>
+                <button class="all" id="allTaskBtn">all</button>
+            </div>
+            <h3>Projects</h3>
+            <div class="projects" id="projectContainer">
+                <div class="project-card">
+                    <button class="project-btn" id="projectBtn">my firts project</button>
+                    <button class="delete-project" id="deleteProjectBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20"
+                            viewBox="0 0 30 30">
+                            <path
+                                d="M 14.984375 2.4863281 A 1.0001 1.0001 0 0 0 14 3.5 L 14 4 L 8.5 4 A 1.0001 1.0001 0 0 0 7.4863281 5 L 6 5 A 1.0001 1.0001 0 1 0 6 7 L 24 7 A 1.0001 1.0001 0 1 0 24 5 L 22.513672 5 A 1.0001 1.0001 0 0 0 21.5 4 L 16 4 L 16 3.5 A 1.0001 1.0001 0 0 0 14.984375 2.4863281 z M 6 9 L 7.7929688 24.234375 C 7.9109687 25.241375 8.7633438 26 9.7773438 26 L 20.222656 26 C 21.236656 26 22.088031 25.241375 22.207031 24.234375 L 24 9 L 6 9 z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <button class="add-project visible" id="addProject">
+                <svg width="30px" height="30px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    stroke="#000000">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path d="M15 12L12 12M12 12L9 12M12 12L12 9M12 12L12 15" stroke="#3B28CC" stroke-width="2.4"
+                            stroke-linecap="round"></path>
+                        <path
+                            d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7"
+                            stroke="#3B28CC" stroke-width="2.4" stroke-linecap="round"></path>
+                    </g>
+                </svg>
+            </button>
+            <form action="post" class="add-project-form" id="addProjectForm">
+                <input class="project-name" type="text" placeholder="name" id="projectInput" required>
+                <button class="add" type="button" id="addProjectFinBtn">
+                    <svg width="30px" height="30px" viewBox="0 0 24.00 24.00" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="0.00024000000000000003">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+                            stroke-width="1.536"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="M17.8086 9.70558C18.1983 9.31421 18.1969 8.68105 17.8056 8.29137C17.4142 7.90169 16.781 7.90305 16.3913 8.29442L10.6215 14.0892L7.30211 10.816C6.90886 10.4283 6.27571 10.4327 5.88793 10.8259C5.50015 11.2192 5.50459 11.8524 5.89784 12.2401L9.92581 16.212C10.3177 16.5985 10.9482 16.5956 11.3366 16.2056L17.8086 9.70558Z"
+                                fill="#29a419"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1ZM3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z"
+                                fill="#29a419"></path>
+                        </g>
+                    </svg>
+                </button>
+                <button class="cancel" type="button">
+                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <g id="Edit / Remove_Minus_Circle">
+                                <path id="Vector"
+                                    d="M8 12H16M12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21Z"
+                                    stroke="#7A0000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                </path>
+                            </g>
+                        </g>
+                    </svg></button>
+            </form>
+        </nav>
+        <div class="main" id="main">
+
+            <div class="project-info">
+
+            </div>
+            <div class="popup-form">
+                <form action="post">
+                    <fieldset>
+                        <legend>
+                            <h1>create your task</h1>
+                        </legend>
+                        <li><label for="name">Name</label><input id="nameInput" name="name" type="text" required></li>
+                        <li>
+                            <label for="dueDate">due date</label>
+                            <input type="date" name="dueDate" id="dueDate" required>
+                        </li>
+                        <li>
+                            <label for="comment">comment</label>
+                            <textarea name="comment" id="comment"></textarea>
+                        </li>
+                        <li>
+                            <label for="priority">priority</label>
+                            <select name="priority" id="priority">
+                                <option value="high">high</option>
+                                <option value="medium">medium</option>
+                                <option value="low">low</option>
+                            </select>
+                        </li>
+                        <li><button class="submitBtn" id="addTaskBtn">done</button></li>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="tasks" id="taskContainer">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
